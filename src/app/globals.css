@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define custom properties for light and dark modes */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #1d4ed8;
+  --secondary: #6b7280;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #2563eb;
+    --secondary: #9ca3af;
+  }
+}
+
+/* Apply the custom properties globally */
+body {
+  @apply antialiased;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+}
+
+/* Utility classes for dark mode support in Tailwind */
+.dark body {
+  @apply bg-black text-white;
+}
