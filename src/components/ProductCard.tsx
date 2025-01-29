@@ -52,7 +52,11 @@ export default function ProductCard({ product }: { product: any }) {
           alt={product.title}
           className="w-full h-64 object-cover rounded-lg"
         />
-        <button onClick={handleFavorite} className="absolute top-3 right-3">
+        <button
+          aria-label="Favorite"
+          onClick={handleFavorite}
+          className="absolute top-3 right-3"
+        >
           <Heart
             className={`w-6 h-6 ${
               isFavorite ? "text-red-500" : "text-gray-400"
@@ -63,6 +67,7 @@ export default function ProductCard({ product }: { product: any }) {
       <h3 className="text-lg font-semibold mt-3">{product.title}</h3>
       <p className="text-gray-700">${product.price}</p>
       <button
+        aria-label="Add to Cart"
         onClick={handleAddToCart}
         className="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg flex items-center gap-2"
       >
